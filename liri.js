@@ -6,6 +6,7 @@ var Spotify = require('node-spotify-api');
 var request = require('request');
 var moment = require('moment');
 var fs = require('fs');
+// var fs = require('fs-extra')
 var command = process.argv[2];
 var userInput = process.argv;
 var liriOutput = process.argv[2];
@@ -35,12 +36,16 @@ for (var i = 3; i < userInput.length; i++) {
 switch (liriOutput) {
 
 
-  case "spotify-this-song":
-    spotify();
-    break;
+  // case "spotify-this-song":
+  //   spotify();
+  //   break;
 
   case "movie-this":
     movieThis();
+    break;
+
+  case "do-what-it-says":
+    doWhatItSays();
     break;
 
 
@@ -103,6 +108,7 @@ function movieThis() {
 
   // Make a request to the OMDB API with the movie specified
   var queryUrl = "http://www.omdbapi.com/?t=" + movieName + "&y=&plot=short&apikey=trilogy";
+  // var defaultUrl = "http://www.omdbapi.com/?t=mr+nobody+&y=&plot=short&apikey=trilogy";
 
   // console.log(queryUrl);
 
@@ -125,4 +131,18 @@ function movieThis() {
     }
   });
 }
+
+// ========================================================
+// DO WHAT IT SAYS CODE
+function doWhatItSays() {
+  fs.writeFile("random.txt", 'spotify-this-song,"I Want it That Way"', function (err) {
+    var song = "spotify-this-song 'I Want it That Way'"
+    // If the code experiences any errors it will log the error to the console.
+    if (err) {
+      return console.log(err);
+    };
+    // Otherwise, it will print: "random.txt was updated!"
+    console.log("random.txt was updated!");
+  });
+};
 // ========================================================
