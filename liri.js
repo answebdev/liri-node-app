@@ -51,7 +51,7 @@ switch (liriOutput) {
   case "do-what-it-says":
     doWhatItSays();
     break;
-    
+
 
 
   // Instructions
@@ -76,13 +76,13 @@ switch (liriOutput) {
 //   for (var i = 3; i < artist.length; i++) {
 //     artistInput = artist + " " + artist[i];
 //     console.log("Title of Movie: " + JSON.parse(body).Title);
-    // console.log("Searched for this: " + artistInput);
-  // }
-  // console.log("ARTIST SEARCHED FOR: " + artistInput);
-  // var numEvents = Object.keys(artist).length;
-  // console.log("EVENT: " + numEvents);
-  // var bandsInTownResults = data.venue;
-  //     console.log("VENUE: " + data.venue);
+// console.log("Searched for this: " + artistInput);
+// }
+// console.log("ARTIST SEARCHED FOR: " + artistInput);
+// var numEvents = Object.keys(artist).length;
+// console.log("EVENT: " + numEvents);
+// var bandsInTownResults = data.venue;
+//     console.log("VENUE: " + data.venue);
 
 // }
 // concertThis();
