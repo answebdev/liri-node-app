@@ -7,10 +7,10 @@ var request = require('request');
 var moment = require('moment');
 var fs = require('fs');
 // var fs = require('fs-extra')
-var command = process.argv[2];
-var userInput = process.argv;
+// var command = process.argv[2];
+// var userInput = process.argv;
 var liriOutput = process.argv[2];
-var input = "";
+// var input = "";
 
 // Instructions
 console.log("\n" + "Type one of the following commands after 'node liri.js' (use quotes for multi-word titles): " + "\n" + "\n" +
@@ -21,10 +21,10 @@ console.log("\n" + "Type one of the following commands after 'node liri.js' (use
 
 // console.log(command);
 
-for (var i = 3; i < userInput.length; i++) {
-  // Keep user input in one string on one line
-  input = input + " " + userInput[i];
-}
+// for (var i = 3; i < userInput.length; i++) {
+//   // Keep user input in one string on one line
+//   input = input + " " + userInput[i];
+// }
 // console.log("COMMAND: " + command);
 // console.log("TERM SEARCHED FOR: " + input);
 
@@ -35,10 +35,14 @@ for (var i = 3; i < userInput.length; i++) {
 // Commands and Instructions
 switch (liriOutput) {
 
+  case "concert-this":
+    concertThis();
+    break;
 
-  // case "spotify-this-song":
-  //   spotify();
-  //   break;
+
+  case "spotify-this-song":
+    spotify();
+    break;
 
   case "movie-this":
     movieThis();
@@ -47,6 +51,7 @@ switch (liriOutput) {
   case "do-what-it-says":
     doWhatItSays();
     break;
+    
 
 
   // Instructions
@@ -61,35 +66,64 @@ switch (liriOutput) {
 
 // ========================================================
 // BANDS IN TOWN CODE
-var artist = "";
-function concertThis() {
-  var queryURL = "https://rest.bandsintown.com/artists/" + artist + "/events?app_id=codingbootcamp";
-  // console.log("BANDS: " + queryURL);
-  artistInput = "";
-  var command = process.argv[2];
-  var artist = process.argv;
-  for (var i = 3; i < artist.length; i++) {
-    artistInput = artist + " " + artist[i];
+// var artist = "";
+// function concertThis() {
+//   var queryURL = "https://rest.bandsintown.com/artists/" + artist + "/events?app_id=codingbootcamp";
+//   // console.log("BANDS: " + queryURL);
+//   artistInput = "";
+//   var command = process.argv[2];
+//   var artist = process.argv;
+//   for (var i = 3; i < artist.length; i++) {
+//     artistInput = artist + " " + artist[i];
+//     console.log("Title of Movie: " + JSON.parse(body).Title);
     // console.log("Searched for this: " + artistInput);
-  }
+  // }
   // console.log("ARTIST SEARCHED FOR: " + artistInput);
   // var numEvents = Object.keys(artist).length;
   // console.log("EVENT: " + numEvents);
   // var bandsInTownResults = data.venue;
   //     console.log("VENUE: " + data.venue);
 
+// }
+// concertThis();
+
+function concertThis() {
+  var command = process.argv[2];
+  var artist = process.argv[3];
+
+  // Make a request to the OMDB API with the movie specified
+  var artistQueryURL = "https://rest.bandsintown.com/artists/" + artist + "/events?app_id=codingbootcamp";
+
+  // console.log(queryUrl);
+
+  request(artistQueryURL, function (error, response, body) {
+
+    // If the request is successful
+    if (!error && response.statusCode === 200) {
+
+      // Parse the body of the site and recover the following results
+      // console.log("COMMAND: " + command);
+
+      console.log("Name of the Venue: " + JSON.parse(body)[0].venue.name);
+      console.log("Venue Location: " + JSON.parse(body)[0].venue.city + ", " + JSON.parse(body)[0].venue.country);
+      console.log("Date: " + JSON.parse(body)[0].datetime);
+    }
+  });
 }
-concertThis();
+
+
 // ========================================================
 
 
 // ========================================================
 // SPOTIFY CODE
 function spotify() {
+  var command = process.argv[2];
+  var songTitle = process.argv[3];
   // Access Spotify Keys
   var spotify = new Spotify(keys.spotify);
 
-  spotify.search({ type: 'track', query: input }, function (err, data) {
+  spotify.search({ type: 'track', query: songTitle }, function (err, data) {
     console.log(JSON.stringify(data, null, 2));
     if (err) {
       return console.log('Error occurred: ' + err);
