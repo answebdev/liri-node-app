@@ -106,12 +106,12 @@ function concertThis() {
 
       console.log("Name of the Venue: " + JSON.parse(body)[0].venue.name);
       console.log("Venue Location: " + JSON.parse(body)[0].venue.city + ", " + JSON.parse(body)[0].venue.country);
-      console.log("Date: " + JSON.parse(body)[0].datetime);
+      var datetime = JSON.parse(body)[0].datetime;
+      datetime = moment().format("MM/DD/YYYY");
+      console.log("Date: " + datetime);
     }
   });
 }
-
-
 // ========================================================
 
 
