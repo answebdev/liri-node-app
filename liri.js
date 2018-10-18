@@ -23,7 +23,6 @@ switch (liriOutput) {
     concertThis();
     break;
 
-
   case "spotify-this-song":
     spotify();
     break;
@@ -53,7 +52,7 @@ function concertThis() {
     // If the request is successful
     if (!error && response.statusCode === 200) {
 
-      console.log("\n************ BANDSINTOWN SEARCH RESULT ************\n");
+      console.log("\n************ BANDSINTOWN SEARCH RESULTS ************\n");
       console.log("Name of Venue: " + JSON.parse(body)[0].venue.name);
       console.log("Venue Location: " + JSON.parse(body)[0].venue.city + ", " + JSON.parse(body)[0].venue.country);
       var datetime = JSON.parse(body)[0].datetime;
@@ -70,8 +69,17 @@ function spotify() {
   var songTitle = process.argv[3];
 
   // if (!songTitle) {
-  //   songTitle = "The Sign";
+  //   console.log("\n************** SPOTIFY SEARCH RESULTS **************\n");
+  //   console.log("Artist: Ace of Base");
+  //   console.log("Song TItle: The Sign");
+  //   console.log("URL Preview: https://p.scdn.co/mp3-preview/4c463359f67dd3546db7294d236dd0ae991882ff?cid=e00fbdf58b854dc7b7421a59bc0e4f30");
+  //   console.log("Album: The Sign (US Album) [Remastered]");
+  //   console.log("\n***************************************************\n");
   // }
+
+  if (!songTitle) {
+    songTitle = "The Sign Ace of Base";
+  }
 
   // Access Spotify Keys
   var spotify = new Spotify(keys.spotify);
@@ -85,11 +93,11 @@ function spotify() {
     var searchResult = data.tracks.items;
 
     // for (var i = 0; i < searchResult.length; i++) {
-    console.log("\n************** SPOTIFY SEARCH RESULT **************\n");
+    console.log("\n************** SPOTIFY SEARCH RESULTS **************\n");
     console.log(("Artist(s): " + searchResult[0].artists[0].name));
     console.log(("Song Title: " + searchResult[0].name));
     console.log(("URL Preview: " + searchResult[0].preview_url));
-    console.log(("Album Title: " + searchResult[0].album.name));
+    console.log(("Album: " + searchResult[0].album.name));
     console.log("\n***************************************************\n");
   })
 }
@@ -116,7 +124,7 @@ function movieThis() {
       // Parse the body of the site and recover the following results
       // console.log("COMMAND: " + command);
 
-      console.log("\n*************** OMDB SEARCH RESULT ****************\n");
+      console.log("\n*************** OMDB SEARCH RESULTS ****************\n");
       console.log("Title of Movie: " + JSON.parse(body).Title);
       console.log("Release Year: " + JSON.parse(body).Year);
       console.log("IMDB Rating: " + JSON.parse(body).imdbRating);
