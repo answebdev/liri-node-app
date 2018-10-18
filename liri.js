@@ -9,7 +9,7 @@ var fs = require('fs');
 var liriOutput = process.argv[2];
 
 // INSTRUCTIONS
-console.log("\n" + "Type one of the following commands after 'node liri.js' (use quotes for multi-word titles): " + "\n" + "\n" +
+console.log("\n" + "Type one of the following commands after 'node liri.js' (use quotes for multi-word song and movie titles): " + "\n" + "\n" +
   "concert-this 'artist/band name'" + "\n" +
   "spotify-this-song 'any song title' " + "\n" +
   "movie-this 'any movie title' " + "\n" +
