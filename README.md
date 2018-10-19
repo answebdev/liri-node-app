@@ -49,3 +49,7 @@ https://drive.google.com/file/d/1zTTCWQ063xKTVHmKXtmQ4XHE-XpSAP_5/view
 # Screenshots
 
 ![Screenshot 01](screenshots/liri-screenshot-01.png "movie-this command in action")
+
+![Screenshot 02](screenshots/liri-screenshot-02.png "Search results appended to 'log.txt' file")
+
+![Screenshot 03](screenshots/liri-screenshot-03.png "Default song for spotify-this-song command")
