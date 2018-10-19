@@ -50,15 +50,13 @@ function concertThis() {
   // Make a request to the Bandsintown API with the artist specified
   var artistQueryURL = "https://rest.bandsintown.com/artists/" + artist + "/events?app_id=codingbootcamp";
 
-  // console.log(queryUrl);
-
   request(artistQueryURL, function (error, response, body) {
 
     // If the request is successful
     if (!error && response.statusCode === 200) {
 
-
       console.log("\n*********** BANDS IN TOWN SEARCH RESULTS ***********\n");
+      console.log("Lineup: " + JSON.parse(body)[0].lineup);
       console.log("Name of Venue: " + JSON.parse(body)[0].venue.name);
       console.log("Venue Location: " + JSON.parse(body)[0].venue.city + ", " + JSON.parse(body)[0].venue.country);
       var datetime = JSON.parse(body)[0].datetime;
@@ -66,15 +64,13 @@ function concertThis() {
       console.log("Date of Event: " + datetime);
       console.log("\n****************************************************\n");
 
-      fs.appendFile("log.txt", "\n*********** BANDS IN TOWN SEARCH RESULTS ***********\n\n" + "Artist(s): " + artist + "\n" + "Name of Venue: " + JSON.parse(body)[0].venue.name + "\n" +
+      fs.appendFile("log.txt", "\n*********** BANDS IN TOWN SEARCH RESULTS ***********\n\n" + "Lineup: " + JSON.parse(body)[0].lineup + "\n" + "Name of Venue: " + JSON.parse(body)[0].venue.name + "\n" +
         "Venue Location: " + JSON.parse(body)[0].venue.city + ", " + JSON.parse(body)[0].venue.country + "\n" +
         "Date of Event: " + datetime + "\n\n****************************************************\n" + "\n", function (err) {
           if (err) {
             return console.log(err);
           };
         })
-
-
     }
   });
 }
@@ -85,15 +81,6 @@ function spotify() {
   var command = process.argv[2];
   // Add .slice(3).join(" ") so users can do multi-word searches without having to use quotation marks
   var songTitle = process.argv.slice(3).join(" ");
-
-  // if (!songTitle) {
-  //   console.log("\n************** SPOTIFY SEARCH RESULTS **************\n");
-  //   console.log("Artist: Ace of Base");
-  //   console.log("Song TItle: The Sign");
-  //   console.log("URL Preview: https://p.scdn.co/mp3-preview/4c463359f67dd3546db7294d236dd0ae991882ff?cid=e00fbdf58b854dc7b7421a59bc0e4f30");
-  //   console.log("Album: The Sign (US Album) [Remastered]");
-  //   console.log("\n***************************************************\n");
-  // }
 
   if (!songTitle) {
     songTitle = "The Sign Ace of Base";
@@ -107,7 +94,6 @@ function spotify() {
     if (err) {
       return console.log('Error occurred: ' + err);
     }
-    // var results = data.tracks.items
     var searchResult = data.tracks.items;
 
     // for (var i = 0; i < searchResult.length; i++) {
@@ -124,7 +110,6 @@ function spotify() {
         if (err) {
           return console.log(err);
         };
-
       })
   })
 }
@@ -163,7 +148,6 @@ function movieThis() {
       console.log("Actors: " + JSON.parse(body).Actors);
       console.log("\n****************************************************\n");
 
-
       fs.appendFile("log.txt", "\n**************** OMDB SEARCH RESULTS ***************\n\n" + "Title of Movie: " + JSON.parse(body).Title + "\n" +
         "Release Year: " + JSON.parse(body).Year + "\n" + "IMDB Rating: " + JSON.parse(body).imdbRating + "\n" +
         "Rotten Tomatoes Rating: " + JSON.parse(body).Ratings[1].Value + "\n" + "Country where the movie was produced: " + JSON.parse(body).Country + "\n" +
@@ -173,8 +157,6 @@ function movieThis() {
             return console.log(err);
           };
         })
-
-
     }
   });
 }
