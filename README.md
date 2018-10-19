@@ -29,10 +29,10 @@ LIRI Bot is a command line Node app that takes in parameters and returns data. T
   * If no movie is provided, the program will default to the movie 'Mr. Nobody'.
 * do-what-it-says
   * This command uses fs.writeFile to write to random.txt.
-
 * BONUS
   * fs.appendFile is used to append search results to a .txt file called "log.txt".
   * These files are not overwritten each time a new command is run.
+* To see a list of the commands and how to use them, simply run the application by typing 'node liri.js' in the terminal.
 
 # Technologies Used
 
