@@ -8,7 +8,9 @@ var moment = require('moment');
 var fs = require('fs');
 var liriOutput = process.argv[2];
 
+// ========================================================
 // INSTRUCTIONS
+// ========================================================
 console.log("\n" + "Type one of the following commands after 'node liri.js' (use quotes for multi-word song and movie titles): " + "\n" + "\n" +
   "concert-this 'artist/band name'" + "\n" +
   "spotify-this-song 'any song title' " + "\n" +
@@ -17,6 +19,7 @@ console.log("\n" + "Type one of the following commands after 'node liri.js' (use
 
 // ========================================================
 // COMMANDS
+// ========================================================
 switch (liriOutput) {
 
   case "concert-this":
@@ -38,6 +41,7 @@ switch (liriOutput) {
 
 // ========================================================
 // BANDS IN TOWN CODE
+// ========================================================
 function concertThis() {
   var command = process.argv[2];
   var artist = process.argv[3];
@@ -53,17 +57,17 @@ function concertThis() {
     if (!error && response.statusCode === 200) {
 
 
-      console.log("\n************ BANDSINTOWN SEARCH RESULTS ************\n");
+      console.log("\n*********** BANDS IN TOWN SEARCH RESULTS ***********\n");
       console.log("Name of Venue: " + JSON.parse(body)[0].venue.name);
       console.log("Venue Location: " + JSON.parse(body)[0].venue.city + ", " + JSON.parse(body)[0].venue.country);
       var datetime = JSON.parse(body)[0].datetime;
       datetime = moment().format("MM/DD/YYYY");
       console.log("Date of Event: " + datetime);
-      console.log("\n***************************************************\n");
+      console.log("\n****************************************************\n");
 
-      fs.appendFile("log.txt", "Artist(s): " + artist + "\n" + "Name of Venue: " + JSON.parse(body)[0].venue.name + "\n" +
+      fs.appendFile("log.txt", "\n*********** BANDS IN TOWN SEARCH RESULTS ***********\n\n" + "Artist(s): " + artist + "\n" + "Name of Venue: " + JSON.parse(body)[0].venue.name + "\n" +
         "Venue Location: " + JSON.parse(body)[0].venue.city + ", " + JSON.parse(body)[0].venue.country + "\n" +
-        "Date of Event: " + datetime + "\n\n", function (err) {
+        "Date of Event: " + datetime + "\n\n****************************************************\n" + "\n", function (err) {
           if (err) {
             return console.log(err);
           };
@@ -75,6 +79,7 @@ function concertThis() {
 }
 // ========================================================
 // SPOTIFY CODE
+// ========================================================
 function spotify() {
   var command = process.argv[2];
   var songTitle = process.argv[3];
@@ -109,11 +114,11 @@ function spotify() {
     console.log(("Song Title: " + searchResult[0].name));
     console.log(("URL Preview: " + searchResult[0].preview_url));
     console.log(("Album: " + searchResult[0].album.name));
-    console.log("\n***************************************************\n");
+    console.log("\n****************************************************\n");
 
-    fs.appendFile("log.txt", "Artist(s): " + searchResult[0].artists[0].name + "\n" +
+    fs.appendFile("log.txt", "\n************** SPOTIFY SEARCH RESULTS **************\n\n" + "Artist(s): " + searchResult[0].artists[0].name + "\n" +
       "Song Title: " + searchResult[0].name + "\n" + "URL Preview: " + searchResult[0].preview_url + "\n" +
-      "Album: " + searchResult[0].album.name + "\n\n", function (err) {
+      "Album: " + searchResult[0].album.name + "\n\n****************************************************\n" + "\n", function (err) {
         if (err) {
           return console.log(err);
         };
@@ -123,6 +128,7 @@ function spotify() {
 }
 // ========================================================
 // OMDB CODE
+// ========================================================
 function movieThis() {
   var command = process.argv[2];
   var movieName = process.argv[3];
@@ -152,13 +158,14 @@ function movieThis() {
       console.log("Language: " + JSON.parse(body).Language);
       console.log("Plot: " + JSON.parse(body).Plot);
       console.log("Actors: " + JSON.parse(body).Actors);
-      console.log("\n***************************************************\n");
+      console.log("\n****************************************************\n");
     }
   });
 }
 
 // ========================================================
 // DO WHAT IT SAYS CODE
+// ========================================================
 function doWhatItSays() {
   fs.writeFile("random.txt", 'spotify-this-song,"I Want it That Way"', function (err) {
     var song = "spotify-this-song 'I Want it That Way'"

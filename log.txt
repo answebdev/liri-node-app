@@ -1,42 +1,20 @@
-Name of Venue: PPG Paints Arena
-Venue Location: Pittsburgh, United States
-Date of Event: 10/18/2018
 
-Name of Venue: Allianz Parque
-Venue Location: Sao Paulo, Brazil
-Date of Event: 10/18/2018
-
-Name of Venue: Yucca Tap Room
-Venue Location: Tempe, United States
-Date of Event: 10/18/2018
-
-Artist(s): aceyalone
-Name of Venue: Yucca Tap Room
-Venue Location: Tempe, United States
-Date of Event: 10/18/2018
-
-Artist(s): Aceyalone
-Name of Venue: Yucca Tap Room
-Venue Location: Tempe, United States
-Date of Event: 10/18/2018
-
-Artist(s): Aceyalone
-Name of Venue: Yucca Tap Room
-Venue Location: Tempe, United States
-Date of Event: 10/18/2018
+************** SPOTIFY SEARCH RESULTS **************
 
 Artist(s): Harry Styles
 Song Title: Sign of the Times
 URL Preview: https://p.scdn.co/mp3-preview/af237206f611b722f48620ece049aff3b8650e77?cid=e00fbdf58b854dc7b7421a59bc0e4f30
 Album: Harry Styles
 
-Artist(s): Harry Styles
-Song Title: Sign of the Times
-URL Preview: https://p.scdn.co/mp3-preview/af237206f611b722f48620ece049aff3b8650e77?cid=e00fbdf58b854dc7b7421a59bc0e4f30
-Album: Harry Styles
+****************************************************
 
-Artist(s): alabama
-Name of Venue: Grand Ole Opry
-Venue Location: Nashville, United States
-Date of Event: 10/18/2018
+
+************** SPOTIFY SEARCH RESULTS **************
+
+Artist(s): Ace of Base
+Song Title: The Sign
+URL Preview: https://p.scdn.co/mp3-preview/4c463359f67dd3546db7294d236dd0ae991882ff?cid=e00fbdf58b854dc7b7421a59bc0e4f30
+Album: The Sign (US Album) [Remastered]
+
+****************************************************
 
