@@ -48,4 +48,4 @@ https://drive.google.com/file/d/1zTTCWQ063xKTVHmKXtmQ4XHE-XpSAP_5/view
 
 # Screenshots
 
-![Image of Yaktocat](liri-screenshot-01.png)
+![Image of Yaktocat](screenshots/liri-screenshot-01.png)
