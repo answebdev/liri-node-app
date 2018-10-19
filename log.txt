@@ -1,10 +1,50 @@
 
+*********** BANDS IN TOWN SEARCH RESULTS ***********
+
+Artist(s): metallica
+Name of Venue: Bryce Jordan Center
+Venue Location: University Park, United States
+Date of Event: 10/18/2018
+
+****************************************************
+
+
+*********** BANDS IN TOWN SEARCH RESULTS ***********
+
+Artist(s): the legendary pink dots
+Name of Venue: THE CAVE
+Venue Location: Frankfurt Am Main, Germany
+Date of Event: 10/18/2018
+
+****************************************************
+
+
 ************** SPOTIFY SEARCH RESULTS **************
 
-Artist(s): Harry Styles
-Song Title: Sign of the Times
-URL Preview: https://p.scdn.co/mp3-preview/af237206f611b722f48620ece049aff3b8650e77?cid=e00fbdf58b854dc7b7421a59bc0e4f30
-Album: Harry Styles
+Artist(s): Dead Kennedys
+Song Title: Holiday in Cambodia
+URL Preview: https://p.scdn.co/mp3-preview/f3e44ced74287099f6d0fffccc6f4f523bc71ca6?cid=e00fbdf58b854dc7b7421a59bc0e4f30
+Album: Give Me Convenience or Give Me Death
+
+****************************************************
+
+
+************** SPOTIFY SEARCH RESULTS **************
+
+Artist(s): Death In June
+Song Title: To Drown a Rose
+URL Preview: https://p.scdn.co/mp3-preview/dd50a95905e0f46492cc5447963b8f381deb4f37?cid=e00fbdf58b854dc7b7421a59bc0e4f30
+Album: Brown Book
+
+****************************************************
+
+
+************** SPOTIFY SEARCH RESULTS **************
+
+Artist(s): Death In June
+Song Title: To Drown a Rose
+URL Preview: https://p.scdn.co/mp3-preview/dd50a95905e0f46492cc5447963b8f381deb4f37?cid=e00fbdf58b854dc7b7421a59bc0e4f30
+Album: Brown Book
 
 ****************************************************
 

@@ -11,7 +11,7 @@ var liriOutput = process.argv[2];
 // ========================================================
 // INSTRUCTIONS
 // ========================================================
-console.log("\n" + "Type one of the following commands after 'node liri.js' (use quotes for multi-word song and movie titles): " + "\n" + "\n" +
+console.log("\n" + "Type one of the following commands after 'node liri.js': " + "\n" + "\n" +
   "concert-this 'artist/band name'" + "\n" +
   "spotify-this-song 'any song title' " + "\n" +
   "movie-this 'any movie title' " + "\n" +
@@ -44,7 +44,7 @@ switch (liriOutput) {
 // ========================================================
 function concertThis() {
   var command = process.argv[2];
-  var artist = process.argv[3];
+  var artist = process.argv.slice(3).join(" ");
 
   // Make a request to the Bandsintown API with the artist specified
   var artistQueryURL = "https://rest.bandsintown.com/artists/" + artist + "/events?app_id=codingbootcamp";
@@ -82,7 +82,7 @@ function concertThis() {
 // ========================================================
 function spotify() {
   var command = process.argv[2];
-  var songTitle = process.argv[3];
+  var songTitle = process.argv.slice(3).join(" ");
 
   // if (!songTitle) {
   //   console.log("\n************** SPOTIFY SEARCH RESULTS **************\n");
@@ -131,7 +131,7 @@ function spotify() {
 // ========================================================
 function movieThis() {
   var command = process.argv[2];
-  var movieName = process.argv[3];
+  var movieName = process.argv.slice(3).join(" ");
 
   if (!movieName) {
     movieName = "Mr. Nobody";
