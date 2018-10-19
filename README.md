@@ -48,4 +48,4 @@ https://drive.google.com/file/d/1zTTCWQ063xKTVHmKXtmQ4XHE-XpSAP_5/view
 
 # Screenshots
 
-![Screenshot 01](screenshots/liri-screenshot-01.png)
+![Screenshot 01](screenshots/liri-screenshot-01.png "movie-this command in action")
