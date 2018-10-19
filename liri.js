@@ -44,6 +44,7 @@ switch (liriOutput) {
 // ========================================================
 function concertThis() {
   var command = process.argv[2];
+  // Add .slice(3).join(" ") so users can do multi-word searches without having to use quotation marks
   var artist = process.argv.slice(3).join(" ");
 
   // Make a request to the Bandsintown API with the artist specified
@@ -82,6 +83,7 @@ function concertThis() {
 // ========================================================
 function spotify() {
   var command = process.argv[2];
+  // Add .slice(3).join(" ") so users can do multi-word searches without having to use quotation marks
   var songTitle = process.argv.slice(3).join(" ");
 
   // if (!songTitle) {
@@ -131,6 +133,7 @@ function spotify() {
 // ========================================================
 function movieThis() {
   var command = process.argv[2];
+  // Add .slice(3).join(" ") so users can do multi-word searches without having to use quotation marks
   var movieName = process.argv.slice(3).join(" ");
 
   if (!movieName) {
@@ -159,6 +162,19 @@ function movieThis() {
       console.log("Plot: " + JSON.parse(body).Plot);
       console.log("Actors: " + JSON.parse(body).Actors);
       console.log("\n****************************************************\n");
+
+
+      fs.appendFile("log.txt", "\n**************** OMDB SEARCH RESULTS ***************\n\n" + "Title of Movie: " + JSON.parse(body).Title + "\n" +
+        "Release Year: " + JSON.parse(body).Year + "\n" + "IMDB Rating: " + JSON.parse(body).imdbRating + "\n" +
+        "Rotten Tomatoes Rating: " + JSON.parse(body).Ratings[1].Value + "\n" + "Country where the movie was produced: " + JSON.parse(body).Country + "\n" +
+        "Language: " + JSON.parse(body).Language + "\n" + "Plot: " + JSON.parse(body).Plot + "\n" + "Actors: " + JSON.parse(body).Actors +
+        "\n\n****************************************************\n" + "\n", function (err) {
+          if (err) {
+            return console.log(err);
+          };
+        })
+
+
     }
   });
 }
