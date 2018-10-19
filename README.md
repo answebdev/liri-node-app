@@ -46,4 +46,6 @@ Since this is a command line application, there is no HTML page to see this app 
 
 https://drive.google.com/file/d/1zTTCWQ063xKTVHmKXtmQ4XHE-XpSAP_5/view
 
+# Screenshots
 
+![Image of Yaktocat](https://octodex.github.com/images/yaktocat.png)
