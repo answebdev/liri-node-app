@@ -42,7 +42,7 @@ LIRI Bot is a command line Node app that takes in parameters and returns data. T
 
 # LIRI Bot Demo
 
-Since this is a command line application, there is no HTML page to see this app in action. You can see the LIRI Bot application in action in my demo video. Here is a link to the demo video:
+Since this is a command line application, there is no HTML page to see this app in action. You can see the LIRI Bot application in action in my demo video. Here is a link to the video:
 
 https://drive.google.com/file/d/1zTTCWQ063xKTVHmKXtmQ4XHE-XpSAP_5/view
 
